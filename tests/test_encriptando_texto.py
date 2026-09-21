@@ -14,7 +14,12 @@ from app.funciones.encriptado import encriptando_texto
     ]
 )
 def test_encriptado_texto(mensaje: str, llave: str):
-    """Test para encriptado simetrico"""
+    """Funciona para encriptacion de textos
+
+    Args:
+        mensaje (str): Mensaje a encriptar
+        llave (str): llave de encriptacion
+    """
     entorno_cifrado = Fernet(llave)
     salida = encriptando_texto(mensaje = mensaje, llave = llave)
     mensaje_desencriptado = entorno_cifrado.decrypt(salida)
